@@ -1,0 +1,16 @@
+.auth-contianer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 100vh;
+}
+
+.auth-contianer img{
+    width: 350px;
+    height: 550px;
+    
+    @media (max-width: 480px) {
+        display: none;
+    }
+}

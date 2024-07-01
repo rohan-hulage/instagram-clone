@@ -1,0 +1,149 @@
+$border-color: lightgray;
+$border-radius: 1px;
+$input-width: 80%;
+$input-height: 35px;
+$button-background-color: #0099e6;
+$button-color: white;
+$font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+$gap-small: 5px;
+$gap-large: 20px;
+
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: 550px;
+  gap: $gap-large;
+  font-family: $font-family;
+
+  @media (max-width: 768px) {
+    width: 300px;
+    height: auto;
+  }
+
+  @media (max-width: 480px) {
+    width: 90%;
+  }
+}
+
+.auth-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 90%;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+  }
+
+  img {
+    width: 200px;
+    height: 70px;
+  }
+}
+
+.form-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $gap-small;
+  width: 100%;
+
+  input {
+    width: $input-width;
+    height: $input-height;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    padding-left: 10px;
+
+    @media (max-width: 480px) {
+      width: 90%;
+    }
+  }
+}
+
+.login-button {
+  width: $input-width;
+  height: $input-height;
+  border: 1px solid $border-color;
+  border-radius: 10px;
+  background-color: $button-background-color;
+  color: $button-color;
+
+  @media (max-width: 480px) {
+    width: 90%;
+  }
+}
+
+.line-container {
+  width: $input-width;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  hr {
+    width: 40%;
+  }
+}
+
+.social-login-container {
+  width: $input-width;
+
+  @media (max-width: 480px) {
+    width: 90%;
+  }
+}
+
+.social-login-button {
+  width: 100%;
+  background-color: white;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $gap-small;
+  font-weight: bolder;
+  font-size: large;
+
+  .google-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.forgot-password-container a {
+  text-decoration: none;
+}
+
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  gap: $gap-small;
+
+  @media (max-width: 480px) {
+    border: none;
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    color: $button-background-color;
+  }
+}
