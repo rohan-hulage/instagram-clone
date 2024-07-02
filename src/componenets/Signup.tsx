@@ -11,7 +11,8 @@ const Signup = () => {
   });
 
   const [showPassword, setShowPassword] = useState(false);
-  const { loading, error, signup} = useSignup()
+  const { loading, error, signup} = useSignup();
+  
   return (
     <div className='form-input-container'>
         <input className='number-email-username' placeholder='Email' type='email'

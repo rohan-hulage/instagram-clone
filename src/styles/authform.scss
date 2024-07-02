@@ -131,7 +131,7 @@ $gap-large: 20px;
 }
 
 .social-login-button {
-  width: 100%;
+  width: $input-width;
   background-color: white;
   border: 1px solid white; // Add border for button
   border-radius: $border-radius;
