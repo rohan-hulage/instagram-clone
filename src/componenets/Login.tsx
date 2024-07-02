@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import '/Users/abhishekhulage/Desktop/instagram-clone/src/styles/authform.scss';
+import useLogin from '../hooks/useLogin';
 
 const Login = () => {
   const [inputs, setInputs] = useState({
     email: '',
     password: '',
   });
+
+  const {loading, error, login} = useLogin();
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -24,8 +27,10 @@ const Login = () => {
             {showPassword ? 'Hide' : 'Show'}
             </button>
         </div>
-      
-        <button className='login-button' type='submit'>Log in</button>
+        {error && <div className='error-message'>Incorrect username or password</div>}
+        <button className='login-button' type='submit'
+        onClick={() => login(inputs)}
+        >Log in</button>
     </div>
   );
 };

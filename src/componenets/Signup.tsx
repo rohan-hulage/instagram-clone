@@ -37,8 +37,12 @@ const Signup = () => {
             </button>
         </div>
 
-        <button className='login-button' type='submit' 
-        onClick={() => signup(inputs)}>Sign up</button>
+        <button 
+          className='login-button' 
+          type='submit' 
+          onClick={() => signup(inputs)}>
+            Sign up
+          </button>
     </div>
   );
 };

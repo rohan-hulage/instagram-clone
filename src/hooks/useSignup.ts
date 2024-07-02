@@ -1,6 +1,6 @@
 import { auth, firestore } from "../firebase/firebase";
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import {doc, setDoc} from 'firebase/firestore';
+import {collection, doc, getDocs, query, setDoc, where} from 'firebase/firestore';
 
 const useSignup = () => {
     
@@ -16,7 +16,13 @@ const useSignup = () => {
             alert("Please fill al the fields");
             return
         }
-        
+
+        const usersRef = collection(firestore, "users");
+        const q = query(usersRef, where("username", "==", inputs.username));
+        const querySnapShot = await getDocs(q);
+        if(!querySnapShot.empty){
+            alert("username already takes");
+        }
 
         try {
             const newUser = await createUserWithEmailAndPassword(inputs.email, inputs.password);
