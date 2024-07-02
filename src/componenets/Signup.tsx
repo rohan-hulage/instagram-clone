@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '/Users/abhishekhulage/Desktop/instagram-clone/src/styles/authform.scss';
+import useSignup from '../hooks/useSignup';
 
 const Signup = () => {
   const [inputs, setInputs] = useState({
@@ -10,7 +11,7 @@ const Signup = () => {
   });
 
   const [showPassword, setShowPassword] = useState(false);
-
+  const { loading, error, signup} = useSignup()
   return (
     <div className='form-input-container'>
         <input className='number-email-username' placeholder='Email' type='email'
@@ -35,7 +36,8 @@ const Signup = () => {
             </button>
         </div>
 
-        <button className='login-button' type='submit'>Sign up</button>
+        <button className='login-button' type='submit' 
+        onClick={() => signup(inputs)}>Sign up</button>
     </div>
   );
 };
