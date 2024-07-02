@@ -1,11 +1,11 @@
 $border-color: lightgray;
-$border-radius: 1px;
-$input-width: 80%;
+$border-radius: 5px; // Slightly increase the border-radius for a more polished look
+$input-width: 100%; // Adjust to full width within the form container
 $input-height: 35px;
 $button-background-color: #0099e6;
 $button-color: white;
 $font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-$gap-small: 5px;
+$gap-small: 15px; // Adjusted for better spacing
 $gap-large: 20px;
 
 .auth-container {
@@ -15,12 +15,12 @@ $gap-large: 20px;
   justify-content: center;
   width: 350px;
   height: 550px;
-  gap: $gap-large;
+  padding: 20px; // Add padding for better spacing
   font-family: $font-family;
+  gap: $gap-large;
 
   @media (max-width: 768px) {
     width: 300px;
-    height: auto;
   }
 
   @media (max-width: 480px) {
@@ -35,6 +35,7 @@ $gap-large: 20px;
   justify-content: center;
   width: 100%;
   height: 90%;
+  padding: 20px; // Add padding for better spacing
   border: 1px solid $border-color;
   border-radius: $border-radius;
 
@@ -43,12 +44,13 @@ $gap-large: 20px;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 30px;
-  }
+    gap: $gap-small; // Add gap between form elements
 
-  img {
-    width: 200px;
-    height: 70px;
+    img {
+      width: 200px;
+      height: auto; // Maintain aspect ratio
+      margin-bottom: 20px; // Add bottom margin for spacing
+    }
   }
 }
 
@@ -56,7 +58,7 @@ $gap-large: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: $gap-small;
+  gap: 5px;
   width: 100%;
 
   input {
@@ -69,16 +71,37 @@ $gap-large: 20px;
     @media (max-width: 480px) {
       width: 90%;
     }
-  }
+}
+}
+
+.password-input {
+    width: $input-width;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+
+    input {
+        width: $input-width;
+        height: $input-height;
+        padding-left: 10px;
+        @media (max-width: 480px) {
+          width: 90%;
+        }
+    }
 }
 
 .login-button {
   width: $input-width;
   height: $input-height;
-  border: 1px solid $border-color;
-  border-radius: 10px;
+  border: none; // Remove border for cleaner look
+  border-radius: $border-radius;
   background-color: $button-background-color;
   color: $button-color;
+  font-weight: bold;
+  margin-top: 5px;
+  cursor: pointer; // Add cursor pointer for better UX
 
   @media (max-width: 480px) {
     width: 90%;
@@ -90,16 +113,18 @@ $gap-large: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: $gap-small;
 
   hr {
     width: 40%;
+    border: 0; // Remove default border
+    height: 1px;
+    background-color: $border-color; // Custom border color
   }
 }
 
 .social-login-container {
   width: $input-width;
-
   @media (max-width: 480px) {
     width: 90%;
   }
@@ -108,13 +133,16 @@ $gap-large: 20px;
 .social-login-button {
   width: 100%;
   background-color: white;
-  border: 1px solid white;
+  border: 1px solid white; // Add border for button
+  border-radius: $border-radius;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: $gap-small;
-  font-weight: bolder;
+  gap: 5px;
+  font-weight: bold;
   font-size: large;
+  margin-top: 20px;
+  cursor: pointer; // Add cursor pointer for better UX
 
   .google-logo {
     display: flex;
@@ -123,8 +151,13 @@ $gap-large: 20px;
   }
 }
 
-.forgot-password-container a {
-  text-decoration: none;
+.forgot-password-container {
+    margin-top: 30px;
+  a {
+    text-decoration: none;
+    color: $button-background-color;
+    font-weight: bold;
+  }
 }
 
 .signup-container {
@@ -135,15 +168,21 @@ $gap-large: 20px;
   height: 10%;
   border: 1px solid $border-color;
   border-radius: $border-radius;
+  padding: 10px; // Add padding for better spacing
   gap: $gap-small;
 
   @media (max-width: 480px) {
     border: none;
   }
 
+  p {
+    margin: 0;
+  }
+
   a {
     text-decoration: none;
     font-weight: bold;
     color: $button-background-color;
+    margin-left: 5px; // Add margin for better spacing
   }
 }
