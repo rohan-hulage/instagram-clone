@@ -7,34 +7,36 @@ import GoogleAuth from './GoogleAuth';
 const AuthForm: React.FC = () => {
   const [isLogin, setLogin] = useState(true);
 
+  const handleSignupSuccess = () => {
+    setLogin(true);
+  };
+
   return (
     <div className='auth-container'>
       <div className='auth-form-container'>
-            <form>
-            <img src='src/assets/instagram-logo-name-removebg-preview.png' alt='instagram-name-logo' />
-            
-            {isLogin ? <Login /> : <Signup />}
-            
-            {isLogin && (
-                <>
-                <div className='line-container'>
-                    <hr />
-                    <div>OR</div>
-                    <hr />
-                </div>
-                <GoogleAuth />
-                <div className='forgot-password-container'>
-                    <a href='/'>Forgot password?</a>
-                </div>
-                </>
-            )}
-            </form>
+        <form>
+          <img src='src/assets/instagram-logo-name-removebg-preview.png' alt='instagram-name-logo' />
+          {isLogin ? <Login /> : <Signup onSignupSuccess={handleSignupSuccess} />}
+          {isLogin && (
+            <>
+              <div className='line-container'>
+                <hr />
+                <div>OR</div>
+                <hr />
+              </div>
+              <GoogleAuth />
+              <div className='forgot-password-container'>
+                <a href='/'>Forgot password?</a>
+              </div>
+            </>
+          )}
+        </form>
       </div>
       <div className='signup-container'>
-            <p>{isLogin ? "Don't have an account?" : "Already have an account?"}</p>
-            <a href='/' onClick={(e) => { e.preventDefault(); setLogin(!isLogin); }}>
-            {isLogin ? "Sign up" : "Log in"}
-            </a>
+        <p>{isLogin ? "Don't have an account?" : "Already have an account?"}</p>
+        <a href='/' onClick={(e) => { e.preventDefault(); setLogin(!isLogin); }}>
+          {isLogin ? "Sign up" : "Log in"}
+        </a>
       </div>
     </div>
   );
