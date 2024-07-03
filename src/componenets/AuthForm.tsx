@@ -3,6 +3,7 @@ import '/Users/abhishekhulage/Desktop/instagram-clone/src/styles/authform.scss';
 import Login from './Login';
 import Signup from './Signup';
 import GoogleAuth from './GoogleAuth';
+import { InstagramLogo } from "../assets/constants";
 
 const AuthForm: React.FC = () => {
   const [isLogin, setLogin] = useState(true);
@@ -15,7 +16,7 @@ const AuthForm: React.FC = () => {
     <div className='auth-container'>
       <div className='auth-form-container'>
         <form>
-          <img src='src/assets/instagram-logo-name-removebg-preview.png' alt='instagram-name-logo' />
+          <div className='instagram-name-logo'><InstagramLogo /></div>
           {isLogin ? <Login /> : <Signup onSignupSuccess={handleSignupSuccess} />}
           {isLogin && (
             <>

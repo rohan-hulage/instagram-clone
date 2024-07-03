@@ -46,11 +46,13 @@ $gap-large: 20px;
     width: 100%;
     gap: $gap-small; 
 
-    img {
-      width: 200px;
-      height: auto; 
-      margin-bottom: 20px; 
+    .instagram-name-logo {
+      svg {
+        width: 150px;
+        height: auto;
     }
+    }
+    
   }
 }
 
@@ -83,6 +85,7 @@ $gap-large: 20px;
     gap: 4px;
     border: 1px solid $border-color;
     border-radius: $border-radius;
+    background-color: white;
 
     input {
         width: 80%;
@@ -174,12 +177,12 @@ $gap-large: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 105%;
   height: 10%;
   border: 1px solid $border-color;
   border-radius: $border-radius;
   padding: 10px; 
-  gap: $gap-small;
+  color: white;
 
   @media (max-width: 480px) {
     border: none;
