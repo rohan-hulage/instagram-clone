@@ -13,9 +13,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
   return (
     <div className='pagelayout-container'>
       {pathname !== "/auth" && (
-        <div className='sidebar-container'>
           <Sidebar />
-        </div>
       )}
 
       <div className='rightside-container'>

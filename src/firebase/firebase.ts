@@ -4,13 +4,13 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCMGJprEfvD7-DaY7cIsu6In8MwCad5PoU",
-  authDomain: "instagram-clone-52d7e.firebaseapp.com",
-  projectId: "instagram-clone-52d7e",
-  storageBucket: "instagram-clone-52d7e.appspot.com",
-  messagingSenderId: "1045832866298",
-  appId: "1:1045832866298:web:cd02bb4781af47fcd52c43",
-  measurementId: "G-GXH8DW0P6R"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
@@ -19,5 +19,4 @@ const auth = getAuth(app);
 const firestore = getFirestore(app);
 const storage = getStorage(app);
 
-export { app, auth, firestore, storage};
-
+export { app, auth, firestore, storage };

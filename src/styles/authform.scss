@@ -1,11 +1,11 @@
 $border-color: lightgray;
-$border-radius: 5px; // Slightly increase the border-radius for a more polished look
-$input-width: 100%; // Adjust to full width within the form container
+$border-radius: 5px; 
+$input-width: 90%; 
 $input-height: 35px;
 $button-background-color: #0099e6;
 $button-color: white;
 $font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-$gap-small: 15px; // Adjusted for better spacing
+$gap-small: 15px; 
 $gap-large: 20px;
 
 .auth-container {
@@ -35,7 +35,7 @@ $gap-large: 20px;
   justify-content: center;
   width: 100%;
   height: 90%;
-  padding: 20px; // Add padding for better spacing
+  padding: 20px;
   border: 1px solid $border-color;
   border-radius: $border-radius;
 
@@ -44,12 +44,12 @@ $gap-large: 20px;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: $gap-small; // Add gap between form elements
+    gap: $gap-small; 
 
     img {
       width: 200px;
-      height: auto; // Maintain aspect ratio
-      margin-bottom: 20px; // Add bottom margin for spacing
+      height: auto; 
+      margin-bottom: 20px; 
     }
   }
 }
@@ -71,7 +71,7 @@ $gap-large: 20px;
     @media (max-width: 480px) {
       width: 90%;
     }
-}
+  }
 }
 
 .password-input {
@@ -79,29 +79,39 @@ $gap-large: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-left: 12px;
+    gap: 4px;
     border: 1px solid $border-color;
     border-radius: $border-radius;
 
     input {
-        width: $input-width;
+        width: 80%;
         height: $input-height;
         padding-left: 10px;
+        border: none;
         @media (max-width: 480px) {
           width: 90%;
         }
+    }
+
+    button {
+      border: none;
+      background-color: white;
+      color: $button-background-color;
+      margin-right: 5px;
     }
 }
 
 .login-button {
   width: $input-width;
   height: $input-height;
-  border: none; // Remove border for cleaner look
+  border: none; 
   border-radius: $border-radius;
   background-color: $button-background-color;
   color: $button-color;
   font-weight: bold;
   margin-top: 5px;
-  cursor: pointer; // Add cursor pointer for better UX
+  cursor: pointer; 
 
   @media (max-width: 480px) {
     width: 90%;
@@ -117,9 +127,9 @@ $gap-large: 20px;
 
   hr {
     width: 40%;
-    border: 0; // Remove default border
+    border: 0; 
     height: 1px;
-    background-color: $border-color; // Custom border color
+    background-color: $border-color;
   }
 }
 
@@ -133,7 +143,7 @@ $gap-large: 20px;
 .social-login-button {
   width: $input-width;
   background-color: white;
-  border: 1px solid white; // Add border for button
+  border: 1px solid white; 
   border-radius: $border-radius;
   display: flex;
   justify-content: center;
@@ -142,7 +152,7 @@ $gap-large: 20px;
   font-weight: bold;
   font-size: large;
   margin-top: 20px;
-  cursor: pointer; // Add cursor pointer for better UX
+  cursor: pointer; 
 
   .google-logo {
     display: flex;
@@ -168,7 +178,7 @@ $gap-large: 20px;
   height: 10%;
   border: 1px solid $border-color;
   border-radius: $border-radius;
-  padding: 10px; // Add padding for better spacing
+  padding: 10px; 
   gap: $gap-small;
 
   @media (max-width: 480px) {
@@ -183,6 +193,6 @@ $gap-large: 20px;
     text-decoration: none;
     font-weight: bold;
     color: $button-background-color;
-    margin-left: 5px; // Add margin for better spacing
+    margin-left: 5px; 
   }
 }
