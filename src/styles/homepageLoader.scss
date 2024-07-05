@@ -1,0 +1,48 @@
+
+.skeleton {
+    background-color: #ddd;
+    border-radius: 4px;
+    margin: 10px 0;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
+  .skeleton-circle {
+    border-radius: 50%;
+  }
+  
+  .skeleton-text {
+    height: 20px;
+    margin: 10px 0;
+  }
+  
+  .skeleton-rect {
+    height: 300px; 
+    margin: 10px 0;
+  }
+  
+  .skeleton-post {
+    padding: 10px;
+    width: 500px; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .skeleton-post {
+      width: 100%;
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      background-color: #eee;
+    }
+    50% {
+      background-color: #ddd;
+    }
+    100% {
+      background-color: #eee;
+    }
+  }
+  

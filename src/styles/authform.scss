@@ -60,7 +60,7 @@ $gap-large: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
   width: 100%;
 
   input {
@@ -105,6 +105,10 @@ $gap-large: 20px;
     }
 }
 
+.error-message {
+  color: white;
+}
+
 .login-button {
   width: $input-width;
   height: $input-height;
@@ -113,7 +117,7 @@ $gap-large: 20px;
   background-color: $button-background-color;
   color: $button-color;
   font-weight: bold;
-  margin-top: 5px;
+  margin-top: 10px;
   cursor: pointer; 
 
   @media (max-width: 480px) {
@@ -127,6 +131,9 @@ $gap-large: 20px;
   justify-content: center;
   align-items: center;
   gap: $gap-small;
+  color: white;
+  margin-top: 20px;
+
 
   hr {
     width: 40%;
@@ -145,9 +152,9 @@ $gap-large: 20px;
 
 .social-login-button {
   width: $input-width;
-  background-color: white;
-  border: 1px solid white; 
-  border-radius: $border-radius;
+  color: white;
+  background-color: #000;
+  border: none;
   display: flex;
   justify-content: center;
   align-items: center;

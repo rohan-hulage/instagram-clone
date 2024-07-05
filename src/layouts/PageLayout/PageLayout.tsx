@@ -16,9 +16,8 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
           <Sidebar />
       )}
 
-      <div className='rightside-container'>
-        {children}
-      </div>
+      {children}
+     
     </div>
   );
 };

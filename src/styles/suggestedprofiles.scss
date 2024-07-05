@@ -1,0 +1,121 @@
+.suggested-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 30%;
+    height: 100%;
+    margin-top: 30px;
+    margin-left: 20px;
+  
+    .suggested-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+  
+      .profile-circle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+  
+        img {
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+        }
+      }
+  
+      a {
+        margin-left: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #0099e6;
+      }
+    }
+  
+    .suggested-text {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 10px;
+  
+      .text-left {
+        color: darkgray;
+        font-weight: bold;
+      }
+  
+      a {
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+      }
+    }
+  
+    .suggested-profile {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+  
+      .profile-circle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+  
+        img {
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+        }
+  
+        .name-count {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+  
+          p {
+            font-weight: bold;
+            padding: 0;
+            margin: 0;
+          }
+  
+          span {
+            font-size: small;
+            color: darkgray;
+          }
+        }
+      }
+  
+      button {
+        border: none;
+        background-color: #000;
+        margin-left: 20px;
+        font-weight: bold;
+        color: #0099e6;
+        cursor: pointer;
+      }
+    }
+  
+    .copyright {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: small;
+      color: darkgray;
+      margin-top: 40px;
+  
+      a {
+        text-decoration: none;
+        color: darkgray;
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .suggested-container {
+      display: none;
+    }
+  }
