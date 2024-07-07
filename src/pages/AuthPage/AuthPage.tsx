@@ -1,6 +1,6 @@
 import React from 'react'
-import '/Users/abhishekhulage/Desktop/instagram-clone/src/styles/auth.scss'
-import AuthForm from '../../componenets/AuthForm'
+import './auth.scss'
+import AuthForm from '../../componenets/Auth/AuthForm'
 
 const AuthPage = () => {
   return (

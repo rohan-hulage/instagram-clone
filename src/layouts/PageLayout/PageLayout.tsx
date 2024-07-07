@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
-import Sidebar from '/Users/abhishekhulage/Desktop/instagram-clone/src/componenets/Sidebar.tsx';
+import Sidebar from '/Users/abhishekhulage/Desktop/instagram-clone/src/componenets//Sidebar/Sidebar';
 import { useLocation } from 'react-router-dom';
-import "/Users/abhishekhulage/Desktop/instagram-clone/src/styles/pagelayout.scss";
+import "./pagelayout.scss";
 
 interface PageLayoutProps {
   children: ReactNode;

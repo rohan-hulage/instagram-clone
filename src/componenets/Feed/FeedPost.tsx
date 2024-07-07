@@ -1,5 +1,5 @@
 import React from 'react';
-import "/Users/abhishekhulage/Desktop/instagram-clone/src/styles/homepage.scss";
+import "/Users/abhishekhulage/Desktop/instagram-clone/src/pages/HomePage/homepage.scss";
 import PostHeader from './PostHeader';
 import PostFooter from './PostFooter';
 

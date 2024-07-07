@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import '/Users/abhishekhulage/Desktop/instagram-clone/src/styles/authform.scss';
+import './authform.scss';
 import Login from './Login';
 import Signup from './Signup';
 import GoogleAuth from './GoogleAuth';
-import { InstagramLogo } from "../assets/constants";
+import { InstagramLogo } from "../../assets/constants";
 
 const AuthForm: React.FC = () => {
   const [isLogin, setLogin] = useState(true);

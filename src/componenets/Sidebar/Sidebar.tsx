@@ -1,5 +1,5 @@
-import { InstagramLogo, InstagramMobileLogo, MessagesLogo, ReelsLogo,} from "../assets/constants";
-import "/Users/abhishekhulage/Desktop/instagram-clone/src/styles/pagelayout.scss";
+import { InstagramLogo, InstagramMobileLogo, MessagesLogo, ReelsLogo,} from "/Users/abhishekhulage/Desktop/instagram-clone/src/assets/constants.tsx";
+import "/Users/abhishekhulage/Desktop/instagram-clone/src/layouts/PageLayout/pagelayout.scss";
 import { GoHomeFill } from "react-icons/go";
 import { MdExplore } from "react-icons/md";
 import { FiSearch } from "react-icons/fi";

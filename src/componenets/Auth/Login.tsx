@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '/Users/abhishekhulage/Desktop/instagram-clone/src/styles/authform.scss';
-import useLogin from '../hooks/useLogin';
+import './authform.scss';
+import useLogin from '/Users/abhishekhulage/Desktop/instagram-clone/src/hooks/useLogin.ts';
 
 interface Inputs {
   email: string;

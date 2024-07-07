@@ -1,4 +1,4 @@
-import '/Users/abhishekhulage/Desktop/instagram-clone/src/styles/suggestedprofiles.scss';
+import './suggestedprofiles.scss';
 
 
 interface PostHeaderProps {

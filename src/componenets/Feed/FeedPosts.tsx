@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import FeedPost from './FeedPost'
-import '/Users/abhishekhulage/Desktop/instagram-clone/src/styles/homepageLoader.scss';
+import './homepageLoader.scss';
 
 const FeedPosts = () => {
   const [isLoading, setIsLoading] = useState(true);  

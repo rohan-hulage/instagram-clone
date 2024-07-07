@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import '/Users/abhishekhulage/Desktop/instagram-clone/src/styles/authform.scss';
-import useSignup from '../hooks/useSignup';
+import './authform.scss';
+import useSignup from '/Users/abhishekhulage/Desktop/instagram-clone/src/hooks/useSignup.ts';
 
 interface SignupProps {
   onSignupSuccess: () => void;
