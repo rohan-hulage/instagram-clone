@@ -1,0 +1,55 @@
+
+.profile-page-header {
+    display: flex;
+    gap: 60px;
+    height: auto;
+    color: white;
+    padding: 40px;
+
+    .header-logo {
+        
+        img {
+            border: 1px;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+    }
+
+    .header-content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 40%;
+
+        .content-username-edit {
+            display: flex;
+            gap: 20px;
+
+            span {
+                font-size: x-large;
+            }
+
+            .edit-button {
+                width: 100px;
+                padding: 10px;
+                background-color: rgba(199, 190, 190, 0.1);
+                border-radius: 8px;
+                border: none;
+                color: white;
+                font-weight: bold;
+            }
+        }
+
+        .count-post-followers-following {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            span {
+                font-weight: bold;
+            }
+        }
+    }
+}

@@ -1,283 +1,344 @@
+$border-radius-circle: 50%;
+$border-radius-post-image: 5px;
+$color-white: white;
+$color-gray: gray;
+$color-darkgray: darkgray;
+$color-like: red;
+$color-save: #dc2743;
+$color-comment-btn: #0099e6;
+$color-background: black;
+$gap-large: 20px;
+$gap-medium: 10px;
+$gap-small: 5px;
+
+@mixin circle($size) {
+  border-radius: $border-radius-circle;
+  width: $size;
+  height: $size;
+
+  img {
+    border-radius: $border-radius-circle;
+    width: $size;
+    height: $size;
+  }
+}
+
+@mixin flex-center($direction: row, $gap: $gap-medium) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin button-reset {
+  background: none;
+  border: none;
+  color: $color-white;
+  cursor: pointer;
+}
+
 .homepage-container {
-    flex: 1;
-    padding: 20px;
-    width: 100%;
+  padding: $gap-large;
+  width: 80%;
+  display: flex;
+  align-items: flex-start;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  color: $color-white;
+
+  .feed-post-stories {
     display: flex;
-    align-items: flex-start;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    color: white;
-  
-    .feed-post-stories {
+    flex-direction: column;
+    width: 60%;
+    margin-left: $gap-large * 2;
+
+    .stories-container {
       display: flex;
-      flex-direction: column;
-      width: 60%;
-      margin-left: 40px;
-  
-      .stories-container {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        padding: 20px 0;
-        width: calc(100% - 40px);
-        margin-left: 20px;
-        overflow-x: scroll;
-        overflow-y: hidden;
-  
-        .stories-circle {
-          border: 2px solid #dc2743;
-          border-radius: 50%;
-          width: 60px;
-          height: 60px;
-  
-          img {
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-          }
-        }
+      align-items: center;
+      gap: $gap-large;
+      padding: $gap-large 0;
+      width: calc(100% - #{$gap-large * 2});
+      margin-left: $gap-large;
+      overflow-x: scroll;
+      overflow-y: hidden;
+
+      .stories-circle {
+        border: 2px solid $color-save;
+        @include circle(60px);
       }
     }
-  
-    .post-container {
-      width: 100%;
-      padding: 20px;
+  }
+
+  .post-container {
+    width: 60%;
+    max-width: 500px;
+    max-height: fit-content;
+    padding: $gap-large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+
+    .post-inner-container {
       display: flex;
       flex-direction: column;
-      align-items: center;
-  
-      .post-inner-container {
+      width: 100%;
+      margin-bottom: $gap-large * 2;
+      border-bottom: 0.5px solid $color-gray;
+
+      .post-username-date {
+        display: flex;
+        align-items: center;
+        gap: $gap-medium;
+        margin-bottom: $gap-medium;
+
+        .profile-circle {
+          @include circle(40px);
+        }
+
+        .post-dot {
+          background-color: $color-white;
+          @include circle(4px);
+        }
+
+        .post-date {
+          color: $color-gray;
+        }
+      }
+
+      .post-image {
+        img {
+          border-radius: $border-radius-post-image;
+          width: 100%;
+          aspect-ratio: 4/5;
+          object-fit: cover;
+        }
+      }
+
+      .post-footer {
         display: flex;
         flex-direction: column;
-        width: 500px;
-        margin-bottom: 40px;
-        border-bottom: 0.5px solid gray;
-  
-        .post-username-date {
+        gap: $gap-small;
+        margin-top: $gap-medium;
+
+        .post-like-comment-save {
           display: flex;
-          align-items: center;
-          gap: 10px;
-          color: white;
-          margin-bottom: 10px;
-  
-          .profile-circle {
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-  
-            img {
-              border-radius: 50%;
-              width: 100%;
-              height: 100%;
-            }
-          }
-  
-          .post-dot {
-            background-color: white;
-            border-radius: 50%;
-            width: 4px;
-            height: 4px;
-          }
-  
-          .post-date {
-            color: gray;
-          }
-        }
-  
-        .post-image {
-          img {
-            border-radius: 5px;
-            width: 100%;
-            height: auto;
-          }
-        }
-  
-        .post-footer {
-          display: flex;
-          flex-direction: column;
-          gap: 5px;
-          margin-top: 10px;
-  
-          .post-like-comment-save {
+          justify-content: space-between;
+
+          .post-like-comment {
             display: flex;
-            justify-content: space-between;
-  
-            .post-like-comment {
-              display: flex;
-              align-items: center;
-              gap: 10px;
-  
-              button {
-                background: none;
-                border: none;
-                color: white;
-                cursor: pointer;
-  
-                svg {
-                  width: 2em;
-                  height: 2em;
-  
-                  &.liked {
-                    color: red;
-                  }
-  
-                  &:hover {
-                    color: gray;
-                  }
-                }
-              }
-            }
-  
+            align-items: center;
+            gap: $gap-medium;
+
             button {
-              background: none;
-              border: none;
-              color: white;
-              cursor: pointer;
-  
+              @include button-reset;
+
               svg {
                 width: 2em;
                 height: 2em;
-  
-                &.saved {
-                  color: #dc2743;
+
+                &.liked {
+                  color: $color-like;
                 }
-  
+
                 &:hover {
-                  color: gray;
+                  color: $color-gray;
                 }
               }
             }
           }
-  
-          .username-caption-comments {
-            span {
-              color: darkgray;
-            }
-          }
-  
-          .add-comment {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            padding-bottom: 10px;
-  
-            input {
-              border: none;
-              flex: 1;
-              background: black;
-              color: white;
-            }
-  
-            button {
-              font-weight: bold;
-              color: #0099e6;
-              background-color: #000;
-              border: none;
-              cursor: pointer;
+
+          button {
+            @include button-reset;
+
+            svg {
+              width: 2em;
+              height: 2em;
+
+              &.saved {
+                color: $color-save;
+              }
+
+              &:hover {
+                color: $color-gray;
+              }
             }
           }
         }
-  
-        .comments {
+
+        .username-caption-comments {
+          padding: 0;
+          margin: 0;
+          span {
+            color: $color-darkgray;
+          }
+        }
+
+        .add-comment {
           display: flex;
-          flex-direction: column;
-          gap: 5px;
+          align-items: center;
           width: 100%;
-  
-          .comment {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: white;
-  
-            .comment-time {
-              color: gray;
-              font-size: 0.8em;
-            }
-  
-            .comment-text {
-              color: white;
-            }
+          padding-bottom: $gap-medium;
+
+          input {
+            border: none;
+            flex: 1;
+            background: $color-background;
+            color: $color-white;
+          }
+
+          button {
+            font-weight: bold;
+            color: $color-comment-btn;
+            background-color: $color-background;
+            border: none;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .comments {
+        display: flex;
+        flex-direction: column;
+        gap: $gap-small;
+        width: 100%;
+
+        .comment {
+          display: flex;
+          align-items: center;
+          gap: $gap-medium;
+
+          .comment-time {
+            color: $color-gray;
+            font-size: 0.8em;
+          }
+
+          .comment-text {
+            color: $color-white;
           }
         }
       }
     }
   }
-  
-  @media (max-width: 768px) {
-    .homepage-container {
-      padding: 10px;
+
+  .profile-sidebar {
+    width: 40%;
+    padding-left: $gap-large;
+
+    .profile-details {
+      display: flex;
       flex-direction: column;
-  
-      .feed-post-stories {
+      align-items: center;
+
+      .profile-picture {
+        @include circle(100px);
+        margin-bottom: $gap-large;
+      }
+
+      .profile-info {
+        color: $color-white;
+        text-align: center;
+
+        .profile-name {
+          font-size: 1.5em;
+          margin-bottom: $gap-medium;
+        }
+
+        .profile-bio {
+          font-size: 1em;
+          color: $color-gray;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage-container {
+    padding: $gap-medium;
+    flex-direction: column;
+
+    .feed-post-stories {
+      width: 100%;
+      margin-left: 0;
+
+      .stories-container {
+        padding: $gap-large 0;
+        gap: $gap-medium;
+
+        .stories-circle {
+          @include circle(50px);
+        }
+      }
+    }
+
+    .post-container {
+      width: 100%;
+      padding: 0 $gap-medium;
+
+      .post-inner-container {
         width: 100%;
-        margin-left: 0;
-  
-        .stories-container {
-          padding: 20px 0;
-          gap: 10px;
-  
-          .stories-circle {
-            width: 50px;
-            height: 50px;
-  
-            img {
-              width: 50px;
-              height: 50px;
+        margin-bottom: $gap-large;
+
+        .post-username-date {
+          gap: $gap-small;
+
+          .profile-circle {
+            @include circle(30px);
+          }
+
+          .post-dot {
+            @include circle(3px);
+          }
+        }
+
+        .post-image img {
+          max-width: 100%;
+        }
+
+        .post-footer {
+          gap: $gap-small;
+
+          .post-like-comment-save {
+            .post-like-comment button svg,
+            button svg {
+              width: 1.5em;
+              height: 1.5em;
             }
+          }
+
+          .username-caption-comments span,
+          .comments .comment .comment-time,
+          .comments .comment .comment-text {
+            font-size: 0.8em;
           }
         }
       }
-  
-      .post-container {
-        width: 100%;
-        padding: 0 10px;
-  
-        .post-inner-container {
-          width: 100%;
-          margin-bottom: 20px;
-  
-          .post-username-date {
-            gap: 5px;
-  
-            .profile-circle {
-              width: 30px;
-              height: 30px;
-  
-              img {
-                width: 30px;
-                height: 30px;
-              }
-            }
-  
-            .post-dot {
-              width: 3px;
-              height: 3px;
-            }
+    }
+
+    .profile-sidebar {
+      width: 100%;
+      padding: $gap-medium 0;
+
+      .profile-details {
+        align-items: flex-start;
+
+        .profile-picture {
+          @include circle(80px);
+          margin-bottom: $gap-medium;
+        }
+
+        .profile-info {
+          .profile-name {
+            font-size: 1.2em;
+            margin-bottom: $gap-medium;
           }
-  
-          .post-image img {
-            max-width: 100%;
-          }
-  
-          .post-footer {
-            gap: 3px;
-  
-            .post-like-comment-save {
-              .post-like-comment button svg,
-              button svg {
-                width: 1.5em;
-                height: 1.5em;
-              }
-            }
-  
-            .username-caption-comments span,
-            .comments .comment .comment-time,
-            .comments .comment .comment-text {
-              font-size: 0.8em;
-            }
+
+          .profile-bio {
+            font-size: 0.9em;
           }
         }
       }
     }
   }
+}
