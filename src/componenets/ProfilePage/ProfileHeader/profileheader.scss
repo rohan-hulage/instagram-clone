@@ -1,55 +1,97 @@
-
 .profile-page-header {
     display: flex;
+    flex-wrap: wrap;
     gap: 60px;
     height: auto;
     color: white;
     padding: 40px;
-
+  
     .header-logo {
-        
-        img {
-            border: 1px;
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-        }
+      img {
+        border: 1px;
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+      }
     }
-
+  
     .header-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 40%;
+  
+      .content-username-edit {
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
         gap: 20px;
-        width: 40%;
-
-        .content-username-edit {
-            display: flex;
-            gap: 20px;
-
-            span {
-                font-size: x-large;
-            }
-
-            .edit-button {
-                width: 100px;
-                padding: 10px;
-                background-color: rgba(199, 190, 190, 0.1);
-                border-radius: 8px;
-                border: none;
-                color: white;
-                font-weight: bold;
-            }
+  
+        span {
+          font-size: x-large;
         }
-
-        .count-post-followers-following {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            span {
-                font-weight: bold;
-            }
+  
+        .edit-button {
+          width: 100px;
+          padding: 10px;
+          background-color: rgba(199, 190, 190, 0.1);
+          border-radius: 8px;
+          border: none;
+          color: white;
+          font-weight: bold;
         }
+      }
+  
+      .count-post-followers-following {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+  
+        span {
+          font-weight: bold;
+        }
+      }
     }
-}
+  
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+  
+      .header-logo img {
+        width: 100px;
+        height: 100px;
+      }
+  
+      .header-content {
+        width: 100%;
+        gap: 10px;
+  
+        .content-username-edit {
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+  
+          span {
+            font-size: large;
+          }
+  
+          .edit-button {
+            width: auto;
+            padding: 8px;
+          }
+        }
+  
+        .count-post-followers-following {
+          flex-direction: column;
+          gap: 10px;
+  
+          span {
+            font-size: medium;
+          }
+        }
+      }
+    }
+  }
+  

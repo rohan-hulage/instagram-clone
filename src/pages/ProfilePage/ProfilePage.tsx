@@ -1,7 +1,7 @@
 import React from 'react'
 import ProfileHeader from '../../componenets/ProfilePage/ProfileHeader/ProfileHeader'
-import ProfileTabs from '../../componenets/ProfilePage/ProfileTabs'
-import ProfilePosts from '../../componenets/ProfilePage/ProfilePosts'
+import ProfileTabs from '../../componenets/ProfilePage/ProfileTabs/ProfileTabs'
+import ProfilePosts from '../../componenets/ProfilePage/ProfilePosts/ProfilePosts'
 import "./profilepage.scss"
 
 const ProfilePage = () => {

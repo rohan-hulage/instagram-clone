@@ -1,7 +1,5 @@
-import React from 'react'
+
 import "./profileheader.scss"
-
-
 
 const ProfileHeader = () => {
   return (
