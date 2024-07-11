@@ -3,6 +3,7 @@ import ProfileHeader from '../../componenets/ProfilePage/ProfileHeader/ProfileHe
 import ProfileTabs from '../../componenets/ProfilePage/ProfileTabs/ProfileTabs'
 import ProfilePosts from '../../componenets/ProfilePage/ProfilePosts/ProfilePosts'
 import "./profilepage.scss"
+import { FaPlus } from "react-icons/fa6";
 
 const ProfilePage = () => {
   return (

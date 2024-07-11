@@ -1,4 +1,3 @@
-
 .profile-tabs-container {
     font-family: 'BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif';
     display: flex;
@@ -8,73 +7,37 @@
     align-items: center;
     align-self: center;
     padding-bottom: 20px;
-
-    .post-tabs {
-        color: white;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        padding-top: 20px;
-        cursor: pointer;
+  
+    .post-tabs, .reels-tab, .saved-tabs, .tags-tabs {
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding-top: 20px;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+  
+      &.active {
         border-top: 2px solid white;
-
-    }
-    .post-tabs:hover {
-        
-    }
-
-    .reels-tab {
-        color: white;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        padding-top: 20px;
-        cursor: pointer;
-
-
-        svg {
-            width: 1rem;
-            height: 1rem;
-        }
-    }
-
-    .saved-tabs {
-        color: white;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        padding-top: 20px;
-        cursor: pointer;
-
-    }
-
-    .tags-tabs {
-        color: white;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        padding-top: 20px;
-        cursor: pointer;
-
-    }
-
-    img {
+      }
+  
+      img {
         background-color: white;
         width: 1rem;
         height: 1rem;
-    }
-
-    span {
+      }
+  
+      span {
         letter-spacing: 2px;
         font-weight: bold;
         font-size: medium;
         cursor: pointer;
-        
-    }
-
-    .icons {
+      }
+  
+      svg {
         width: 1rem;
         height: 1rem;
+      }
     }
-
-}
+  }
+  

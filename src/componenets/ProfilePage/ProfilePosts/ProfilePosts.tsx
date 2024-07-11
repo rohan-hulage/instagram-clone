@@ -24,12 +24,12 @@ const ProfilePosts = () => {
 
 {!isLoading  && (
         <>
-          <ProfilePost img='src/assets/WhatsApp Image 2024-07-04 at 21.43.08.jpeg'/>
-          <ProfilePost img='src/assets/WhatsApp Image 2024-07-04 at 21.43.08.jpeg'/>
-          <ProfilePost img='src/assets/WhatsApp Image 2024-07-04 at 21.43.08.jpeg'/>
-          <ProfilePost img='src/assets/WhatsApp Image 2024-07-04 at 21.43.08.jpeg'/>
-          <ProfilePost img='src/assets/WhatsApp Image 2024-07-04 at 21.43.08.jpeg'/>
-          <ProfilePost img='src/assets/WhatsApp Image 2024-07-04 at 21.43.08.jpeg'/>
+          <ProfilePost img='src/assets/WhatsApp Image 2024-07-04 at 21.43.08.jpeg' likes={190} comments={23}/>
+          <ProfilePost img='src/assets/WhatsApp Image 2024-07-04 at 21.43.08.jpeg' likes={190} comments={23}/>
+          <ProfilePost img='src/assets/WhatsApp Image 2024-07-04 at 21.43.08.jpeg' likes={190} comments={23}/>
+          <ProfilePost img='src/assets/WhatsApp Image 2024-07-04 at 21.43.08.jpeg' likes={190} comments={23}/>
+          <ProfilePost img='src/assets/WhatsApp Image 2024-07-04 at 21.43.08.jpeg' likes={190} comments={23}/>
+          <ProfilePost img='src/assets/WhatsApp Image 2024-07-04 at 21.43.08.jpeg' likes={190} comments={23}/>
         </>
         )
        }
