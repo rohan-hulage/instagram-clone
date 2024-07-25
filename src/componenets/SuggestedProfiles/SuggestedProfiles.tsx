@@ -18,7 +18,7 @@ const SuggestedProfiles = () => {
             username='pratik_k' profile='src/assets/WhatsApp Image 2024-07-04 at 21.43.08.jpeg' followersCount={1223}
         />
          <SuggestedProfile 
-            username='dish_heen' profile='src/assets/WhatsApp Image 2024-07-04 at 21.43.08.jpeg' followersCount={593}
+            username='disha_heen' profile='src/assets/WhatsApp Image 2024-07-04 at 21.43.08.jpeg' followersCount={593}
         />
          <SuggestedProfile 
             username='aniruddha_g' profile='src/assets/WhatsApp Image 2024-07-04 at 21.43.08.jpeg' followersCount={754}
