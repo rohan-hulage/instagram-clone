@@ -1,16 +1,75 @@
-.auth-contianer {
+// Variables
+$bg-color: #fafafa;
+$border-color: #dbdbdb;
+$text-primary: #262626;
+
+.auth-container {
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    height: 100vh;
-}
+    padding: 20px;
+    background-color: $bg-color;
 
-.auth-contianer img{
-    width: 350px;
-    height: 550px;
-    
-    @media (max-width: 480px) {
+    .auth-container-inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        max-width: 935px;
+        width: 100%;
+    }
+
+    .auth-left {
         display: none;
+
+        @media (min-width: 876px) {
+            display: block;
+            flex-basis: 380px;
+            height: 581px;
+            margin-bottom: 12px;
+            margin-right: 32px;
+
+            img {
+                height: 100%;
+                // Assuming the image provided acts as the phone frame + content
+            }
+        }
+    }
+
+    .auth-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 350px;
+        width: 100%;
+        gap: 10px;
+
+        // AuthForm component will inject its own container here
+
+        .get-app-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px 0;
+
+            p {
+                margin: 10px 0 20px;
+                font-size: 14px;
+                color: $text-primary;
+                text-align: center;
+            }
+
+            .app-store-images {
+                display: flex;
+                gap: 8px;
+                justify-content: center;
+
+                img {
+                    height: 40px;
+                    cursor: pointer;
+                }
+            }
+        }
     }
 }

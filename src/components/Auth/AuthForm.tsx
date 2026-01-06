@@ -13,7 +13,7 @@ const AuthForm: React.FC = () => {
   };
 
   return (
-    <div className='auth-container'>
+    <div className='auth-form-wrapper'>
       <div className='auth-form-container'>
         <form>
           <div className='instagram-name-logo'><InstagramLogo /></div>

@@ -27,21 +27,18 @@ const Signup: React.FC<SignupProps> = ({ onSignupSuccess }) => {
   return (
     <div className='form-input-container'>
       <input
-        className='number-email-username'
         placeholder='Email'
         type='email'
         value={inputs.email}
         onChange={(e) => setInputs({ ...inputs, email: e.target.value })}
       />
       <input
-        className='number-email-username'
         placeholder='Username'
         type='text'
         value={inputs.username}
         onChange={(e) => setInputs({ ...inputs, username: e.target.value })}
       />
       <input
-        className='number-email-username'
         placeholder='Full Name'
         type='text'
         value={inputs.fullName}
@@ -49,7 +46,6 @@ const Signup: React.FC<SignupProps> = ({ onSignupSuccess }) => {
       />
       <div className='password-input'>
         <input
-          className='password'
           placeholder='Password'
           type={showPassword ? 'text' : 'password'}
           value={inputs.password}

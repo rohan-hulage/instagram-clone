@@ -1,208 +1,244 @@
-$border-color: lightgray;
-$border-radius: 5px; 
-$input-width: 90%; 
-$input-height: 35px;
-$button-background-color: #0099e6;
-$button-color: white;
-$font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-$gap-small: 15px; 
-$gap-large: 20px;
+// Variables
+$bg-color: #fafafa;
+$white: #ffffff;
+$border-color: #dbdbdb;
+$button-blue: #0095f6;
+$button-disabled: rgba(0, 149, 246, 0.3);
+$text-primary: #262626;
+$text-secondary: #8e8e8e;
+$link-blue: #00376b;
+$font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
-.auth-container {
+// Mixins
+@mixin card-style {
+  background-color: $white;
+  border: 1px solid $border-color;
+  border-radius: 1px;
+  padding: 10px 0; // Padding handled by children generally, but container padding is minimal
+}
+
+.auth-form-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 350px;
-  height: 550px;
-  padding: 20px; // Add padding for better spacing
-  font-family: $font-family;
-  gap: $gap-large;
+  gap: 10px;
 
-  @media (max-width: 768px) {
-    width: 300px;
-  }
+  @media (max-width: 450px) {
+    width: 100%;
 
-  @media (max-width: 480px) {
-    width: 90%;
+    .auth-form-container,
+    .signup-container {
+      border: none;
+      background-color: transparent;
+    }
   }
 }
 
 .auth-form-container {
+  @include card-style;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 90%;
-  padding: 20px;
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
+  padding: 20px 40px;
+
+  .instagram-name-logo {
+    margin: 36px 0 12px 0;
+
+    // SVG sizing
+    svg {
+      width: 175px;
+      height: 51px;
+    }
+  }
 
   form {
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 100%;
-    gap: $gap-small; 
-
-    .instagram-name-logo {
-      svg {
-        width: 150px;
-        height: auto;
-      }
-    }
-    
+    align-items: center;
+    margin-top: 24px;
+    gap: 6px;
   }
 }
 
 .form-input-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
   width: 100%;
 
   input {
-    width: $input-width;
-    height: $input-height;
+    width: 100%;
+    height: 38px;
+    background: $bg-color;
     border: 1px solid $border-color;
-    border-radius: $border-radius;
-    padding-left: 10px;
+    border-radius: 3px;
+    padding: 9px 0 7px 8px;
+    font-size: 12px;
+    color: $text-primary;
+    outline: none;
 
-    @media (max-width: 480px) {
-      width: 90%;
+    &:focus {
+      border: 1px solid $text-secondary;
+    }
+
+    &::placeholder {
+      color: $text-secondary;
     }
   }
 }
 
 .password-input {
-    width: $input-width;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 12px;
-    gap: 4px;
+  // Relative positioning to place the "Show" button
+  position: relative;
+  width: 100%;
+
+  input {
+    width: 100%;
+    height: 38px;
+    background: $bg-color;
     border: 1px solid $border-color;
-    border-radius: $border-radius;
-    background-color: white;
+    border-radius: 3px;
+    padding: 9px 40px 7px 8px; // Right padding for button
+    font-size: 12px;
+    color: $text-primary;
+    outline: none;
 
-    input {
-        width: 80%;
-        height: $input-height;
-        padding-left: 10px;
-        border: none;
-        @media (max-width: 480px) {
-          width: 90%;
-        }
+    &:focus {
+      border: 1px solid $text-secondary;
     }
 
-    button {
-      border: none;
-      background-color: white;
-      color: $button-background-color;
-      margin-right: 5px;
+    &::placeholder {
+      color: $text-secondary;
     }
+  }
+
+  button {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: $text-primary;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0;
+
+    &:hover {
+      color: lighten($text-primary, 20%);
+    }
+  }
 }
 
-.error-message {
-  color: white;
-}
 
 .login-button {
-  width: $input-width;
-  height: $input-height;
-  border: none; 
-  border-radius: $border-radius;
-  background-color: $button-background-color;
-  color: $button-color;
-  font-weight: bold;
-  margin-top: 10px;
-  cursor: pointer; 
+  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: $button-blue;
+  color: $white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 7px 16px;
+  cursor: pointer;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  @media (max-width: 480px) {
-    width: 90%;
+  &:disabled {
+    background-color: $button-disabled;
+    cursor: default;
   }
 }
 
 .line-container {
-  width: $input-width;
   display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 10px 0 18px 0;
   justify-content: center;
   align-items: center;
-  gap: $gap-small;
-  color: white;
-  margin-top: 20px;
-
 
   hr {
-    width: 40%;
-    border: 0; 
+    flex-grow: 1;
     height: 1px;
     background-color: $border-color;
+    border: none;
+  }
+
+  div {
+    color: $text-secondary;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0 18px;
   }
 }
 
 .social-login-container {
-  width: $input-width;
-  @media (max-width: 480px) {
-    width: 90%;
-  }
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .social-login-button {
-  width: $input-width;
-  color: white;
-  background-color: #000;
+  background: none;
   border: none;
+  cursor: pointer;
+  color: #385185;
+  font-size: 14px;
+  font-weight: 600;
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 5px;
-  font-weight: bold;
-  font-size: large;
-  margin-top: 20px;
-  cursor: pointer; 
+  gap: 8px;
+  margin: 8px 0;
 
   .google-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // Assume it's the FB/Google icon
+    font-size: 18px;
   }
 }
 
 .forgot-password-container {
-    margin-top: 30px;
+  margin-top: 12px;
+
   a {
+    font-size: 12px;
+    color: $link-blue;
     text-decoration: none;
-    color: $button-background-color;
-    font-weight: bold;
+
+    &:active {
+      opacity: 0.5;
+    }
   }
 }
 
 .signup-container {
+  @include card-style;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 105%;
-  height: 10%;
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
-  padding: 10px; 
-  color: white;
-
-  @media (max-width: 480px) {
-    border: none;
-  }
+  padding: 20px 0;
+  font-size: 14px;
+  color: $text-primary;
 
   p {
     margin: 0;
   }
 
   a {
+    color: $button-blue;
+    font-weight: 600;
     text-decoration: none;
-    font-weight: bold;
-    color: $button-background-color;
-    margin-left: 5px; 
+    margin-left: 5px;
+    cursor: pointer;
   }
+}
+
+.error-message {
+  color: #ed4956;
+  font-size: 14px;
+  margin: 10px 0;
+  text-align: center;
 }

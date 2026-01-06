@@ -28,7 +28,6 @@ const Login: React.FC = () => {
   return (
     <div className='form-input-container'>
       <input
-        className='number-email-username'
         placeholder='Username or Email'
         type='email'
         value={inputs.email}
@@ -36,7 +35,6 @@ const Login: React.FC = () => {
       />
       <div className='password-input'>
         <input
-          className='password'
           placeholder='Password'
           type={showPassword ? 'text' : 'password'}
           value={inputs.password}
