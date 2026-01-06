@@ -8,32 +8,32 @@ const ProfileTabs = () => {
 
   return (
     <div className='profile-tabs-container'>
-      <div 
-        className={`post-tabs ${activeTab === 'posts' ? 'active' : ''}`} 
+      <div
+        className={`post-tabs ${activeTab === 'posts' ? 'active' : ''}`}
         onClick={() => setActiveTab('posts')}
       >
         <img src='src/assets/profile.png' alt='post-icon' />
         <span>POSTS</span>
       </div>
 
-      <div 
-        className={`reels-tab ${activeTab === 'reels' ? 'active' : ''}`} 
+      <div
+        className={`reels-tab ${activeTab === 'reels' ? 'active' : ''}`}
         onClick={() => setActiveTab('reels')}
       >
         <ReelsLogo />
         <span>REELS</span>
       </div>
-      
-      <div 
-        className={`saved-tabs ${activeTab === 'saved' ? 'active' : ''}`} 
+
+      <div
+        className={`saved-tabs ${activeTab === 'saved' ? 'active' : ''}`}
         onClick={() => setActiveTab('saved')}
       >
         <FaBookmark className="icons" />
         <span>SAVED</span>
       </div>
 
-      <div 
-        className={`tags-tabs ${activeTab === 'tags' ? 'active' : ''}`} 
+      <div
+        className={`tags-tabs ${activeTab === 'tags' ? 'active' : ''}`}
         onClick={() => setActiveTab('tags')}
       >
         <img src="src/assets/instagram-tag-icon.png" alt="tag-icon" />

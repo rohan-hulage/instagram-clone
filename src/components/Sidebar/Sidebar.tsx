@@ -9,8 +9,12 @@ import { useEffect, useState } from 'react';
 import { CiLogout } from "react-icons/ci";
 
 
+import useLogout from "../../hooks/useLogout";
+import { Link } from "react-router-dom";
+
 const SideBar = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const { handleLogout, loading } = useLogout();
 
   useEffect(() => {
     const handleResize = () => {
@@ -31,7 +35,9 @@ const SideBar = () => {
   return (
     <div className='sidebar-container'>
       <div className='sidebar-logo '>
-        {isMobile ? <InstagramMobileLogo /> : <InstagramLogo />}
+        <Link to="/" style={{ display: "block", cursor: "pointer" }}>
+          {isMobile ? <InstagramMobileLogo /> : <InstagramLogo />}
+        </Link>
       </div>
 
       <div className="sidebar-menu">
@@ -68,11 +74,9 @@ const SideBar = () => {
           <h2>Profile</h2>
         </div>
 
-        <div className="sidebar-logout logo">
-          <a href="/auth">
-            <CiLogout />
-            <h2>Logout</h2>
-          </a>
+        <div className="sidebar-logout logo" onClick={handleLogout} style={{ cursor: "pointer" }}>
+          <CiLogout />
+          <h2>Logout</h2>
         </div>
 
       </div>
