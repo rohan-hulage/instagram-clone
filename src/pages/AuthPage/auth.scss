@@ -1,9 +1,11 @@
 // Variables
-$bg-color: #fafafa;
-$border-color: #dbdbdb;
-$text-primary: #262626;
+$bg-color: var(--bg-primary);
+$border-color: var(--border-color);
+$text-primary: var(--text-primary);
 
 .auth-container {
+    flex: 1; // Grow to fill the PageLayout flex container
+    width: 100%;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -16,26 +18,12 @@ $text-primary: #262626;
         justify-content: center;
         align-items: center;
         gap: 32px;
-        max-width: 935px;
+        max-width: 350px;
         width: 100%;
+        margin: 0 auto; // Force centering
     }
 
-    .auth-left {
-        display: none;
 
-        @media (min-width: 876px) {
-            display: block;
-            flex-basis: 380px;
-            height: 581px;
-            margin-bottom: 12px;
-            margin-right: 32px;
-
-            img {
-                height: 100%;
-                // Assuming the image provided acts as the phone frame + content
-            }
-        }
-    }
 
     .auth-right {
         display: flex;
