@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import Sidebar from '/Users/abhishekhulage/Desktop/instagram-clone/src/componenets//Sidebar/Sidebar';
+import Sidebar from '../../components/Sidebar/Sidebar';
 import { useLocation } from 'react-router-dom';
 import "./pagelayout.scss";
 
@@ -13,11 +13,11 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
   return (
     <div className='pagelayout-container'>
       {pathname !== "/auth" && (
-          <Sidebar />
+        <Sidebar />
       )}
 
       {children}
-     
+
     </div>
   );
 };

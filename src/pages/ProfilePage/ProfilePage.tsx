@@ -1,9 +1,7 @@
-import React from 'react'
-import ProfileHeader from '../../componenets/ProfilePage/ProfileHeader/ProfileHeader'
-import ProfileTabs from '../../componenets/ProfilePage/ProfileTabs/ProfileTabs'
-import ProfilePosts from '../../componenets/ProfilePage/ProfilePosts/ProfilePosts'
+import ProfileHeader from '../../components/ProfilePage/ProfileHeader/ProfileHeader'
+import ProfileTabs from '../../components/ProfilePage/ProfileTabs/ProfileTabs'
+import ProfilePosts from '../../components/ProfilePage/ProfilePosts/ProfilePosts'
 import "./profilepage.scss"
-import { FaPlus } from "react-icons/fa6";
 
 const ProfilePage = () => {
   return (
@@ -14,7 +12,7 @@ const ProfilePage = () => {
         <ProfileTabs />
         <ProfilePosts />
       </div>
-     
+
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import "./homepage.scss";
-import FeedPosts from '../../componenets/Feed/FeedPosts';
-import Stories from '../../componenets/Feed/Stories';
-import SuggestedProfiles from "../../componenets/SuggestedProfiles/SuggestedProfiles";
+import FeedPosts from '../../components/Feed/FeedPosts';
+import Stories from '../../components/Feed/Stories';
+import SuggestedProfiles from "../../components/SuggestedProfiles/SuggestedProfiles";
 
 const HomePage = () => {
 
@@ -10,12 +10,12 @@ const HomePage = () => {
     <div className='homepage-container'>
 
       <div className='feed-post-stories'>
-        <Stories />  
+        <Stories />
         <FeedPosts />
       </div>
 
       <SuggestedProfiles />
-        
+
 
     </div>
   );
