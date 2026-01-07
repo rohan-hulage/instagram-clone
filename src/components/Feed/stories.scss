@@ -1,0 +1,66 @@
+.stories-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px; // Increased gap for better separation
+    padding: 20px 0;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none; // Firefox
+    -ms-overflow-style: none; // IE/Edge
+
+    &::-webkit-scrollbar {
+        display: none; // Chrome/Safari
+    }
+
+    .story-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+        min-width: 66px; // Ensure items don't shrink too much
+
+        .story-ring {
+            width: 66px;
+            height: 66px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            padding: 2px; // Thickness of the ring
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.2s ease-in-out;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+
+            .story-avatar {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                border: 2px solid black; // Border between ring and image
+                object-fit: cover;
+                background-color: #262626; // Fallback color
+            }
+        }
+
+        .story-username {
+            color: white;
+            font-size: 11px;
+            text-align: center;
+            max-width: 70px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        // Greyed out style for specific use cases if needed, though for now we assume all act as active
+        &.viewed {
+            .story-ring {
+                background: #666;
+            }
+        }
+    }
+}

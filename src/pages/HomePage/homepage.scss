@@ -52,21 +52,7 @@ $gap-small: 5px;
     width: 60%;
     margin-left: $gap-large * 2;
 
-    .stories-container {
-      display: flex;
-      align-items: center;
-      gap: $gap-large;
-      padding: $gap-large 0;
-      width: calc(100% - #{$gap-large * 2});
-      margin-left: $gap-large;
-      overflow-x: scroll;
-      overflow-y: hidden;
 
-      .stories-circle {
-        border: 2px solid $color-save;
-        @include circle(60px);
-      }
-    }
   }
 
   .post-container {
@@ -169,6 +155,7 @@ $gap-small: 5px;
         .username-caption-comments {
           padding: 0;
           margin: 0;
+
           span {
             color: $color-darkgray;
           }
@@ -262,14 +249,7 @@ $gap-small: 5px;
       width: 100%;
       margin-left: 0;
 
-      .stories-container {
-        padding: $gap-large 0;
-        gap: $gap-medium;
 
-        .stories-circle {
-          @include circle(50px);
-        }
-      }
     }
 
     .post-container {
@@ -300,6 +280,7 @@ $gap-small: 5px;
           gap: $gap-small;
 
           .post-like-comment-save {
+
             .post-like-comment button svg,
             button svg {
               width: 1.5em;
