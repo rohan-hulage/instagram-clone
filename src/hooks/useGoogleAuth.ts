@@ -7,7 +7,7 @@ const useGoogleAuth = () => {
     const [signInWithGoogle, , , error] = useSignInWithGoogle(auth);
     const loginUser = useAuthStore((state) => state.login);
 
-    const handleGoogleAuth = async () => {
+    const handleGoogleAuth = async (mode: 'login' | 'signup') => {
         try {
             const newUser = await signInWithGoogle();
 
@@ -25,6 +25,16 @@ const useGoogleAuth = () => {
                 localStorage.setItem("user-info", JSON.stringify(userDoc));
                 loginUser(JSON.stringify(userDoc));
             } else {
+                // user does not exist
+                if (mode === 'login') {
+                    // DELETE the auth session effectively cancelling the login
+                    // We need to import signOut directly from firebase/auth or use the instance
+                    // But since we are inside execution, we can just use the auth instance
+                    await auth.signOut();
+                    alert("Account does not exist. Please try signing up.");
+                    return;
+                }
+
                 // signup
                 const userDoc = {
                     uid: newUser?.user.uid,

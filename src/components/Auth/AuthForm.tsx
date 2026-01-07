@@ -18,18 +18,19 @@ const AuthForm: React.FC = () => {
         <form>
           <div className='instagram-name-logo'><InstagramLogo /></div>
           {isLogin ? <Login /> : <Signup onSignupSuccess={handleSignupSuccess} />}
+
+          <div className='line-container'>
+            <hr />
+            <div>OR</div>
+            <hr />
+          </div>
+
+          <GoogleAuth prefix={isLogin ? "Log in" : "Sign up"} mode={isLogin ? 'login' : 'signup'} />
+
           {isLogin && (
-            <>
-              <div className='line-container'>
-                <hr />
-                <div>OR</div>
-                <hr />
-              </div>
-              <GoogleAuth />
-              <div className='forgot-password-container'>
-                <a href='/'>Forgot password?</a>
-              </div>
-            </>
+            <div className='forgot-password-container'>
+              <a href='/'>Forgot password?</a>
+            </div>
           )}
         </form>
       </div>
